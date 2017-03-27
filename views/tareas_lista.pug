@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+
+  each tarea, i in tareas
+    .container
+      .row
+        .col-md-3
+          .h3 #{tarea.nom}
+        .col-md-7
+          .progress
+            .progress-bar.progress-bar-striped(role='progressbar', aria-valuenow=tarea.realitzacio, aria-valuemin='0', aria-valuemax='100', style='width: '+tarea.realitzacio+'%')
+              span.sr-only 60% Complete
+        .col-md-2
+          button.btn.btn-xs.btn-default(type='button') Actualizar
+        .col-md-12
+          .list-inline
+            each tag in tarea.etiquetes
+              li
+                span.label.label-primary #{tag}
+
+    hr
+
+  button.btn.btn-md.btn-success(type='button') Crear Tarea
