@@ -37,7 +37,20 @@ router.get('/new', function(req,res,next) {
 
 /* GET crear tareas page. */
 router.post('/crear', function(req,res,next) {
- res.render('tareas_crear', { title: 'TareasCrear' });
+    var name = req.body.nombre;
+    var etiquetas = req.body.tags;
+    var progreso = req.body.percent;
+
+    etiquetas = etiquetas.split(',');
+
+    var nuevaTarea = {
+      nom: name,
+      etiquetes: etiquetas,
+      realitzacio: progreso
+    };
+
+    tareas.push(nuevaTarea);
+    res.redirect('/tareas');
 });
 
 module.exports = router;

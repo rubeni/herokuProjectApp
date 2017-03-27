@@ -1,5 +1,21 @@
+
 extends layout
 
 block content
  h1= title
- p Welcome to #{title}
+
+ .container
+   .row
+     .col-md-6
+       form(method='post', action='/tareas/crear')
+         .form-group
+           label(for='nombre') Nombre Tarea:
+           input#nom.form-control(type='text', name='nombre', placeholder='Nombre tarea')
+         .form-group
+           label(for='tags') Etiquetas (separadas por comas):
+           input#tags.form-control(type='text', name='tags', placeholder='Etiquetas')
+         .form-group
+           label(for='percent') % Realización:
+           input#percent.form-control(type='number', name='percent', placeholder='% Realización', min='0', max='100')
+         .form-group
+           input.btn.btn-md.btn-success(type='submit')
