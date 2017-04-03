@@ -7,16 +7,16 @@ block content
     .container
       .row
         .col-md-3
-          .h3 #{tarea.nom}
+          .h3(style='margin: 0px !important') #{tarea.nombre}
         .col-md-7
           .progress
-            .progress-bar.progress-bar-striped(role='progressbar', aria-valuenow=tarea.realitzacio, aria-valuemin='0', aria-valuemax='100', style='width: '+tarea.realitzacio+'%')
-              span.sr-only 60% Complete
+            .progress-bar.progress-bar-striped(role='progressbar', aria-valuenow=tarea.porcentaje, aria-valuemin='0', aria-valuemax='100', style='width:'+tarea.porcentaje+'%')
+              p #{tarea.porcentaje}%
         .col-md-2
           button.btn.btn-xs.btn-default(type='button') Actualizar
         .col-md-12
           .list-inline
-            each tag in tarea.etiquetes
+            each tag in tarea.etiquetas
               li
                 span.label.label-primary #{tag}
 
