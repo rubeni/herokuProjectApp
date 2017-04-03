@@ -1,13 +1,13 @@
 var path = require('path');
 
-var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
-var DB_name  = (url[6]||null);
-var user     = (url[2]||null);
-var pwd      = (url[3]||null);
-var protocol = (url[1]||null);
-var dialect  = (url[1]||null);
-var port     = (url[5]||null);
-var host     = (url[4]||null);
+//var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
+var DB_name  = ('d3cbvdvqel464g'||null);
+var user     = ('scfhyiowvmwczz'||null);
+var pwd      = ('35946eb6c65a409a32e81bca61c187bd4e89984641c72e56df2fe9460669c6cb'||null);
+var protocol = ('postgres'||null);
+var dialect  = ('postgres'||null);
+var port     = ('5432'||null);
+var host     = ('ec2-54-163-234-140.compute-1.amazonaws.com'||null);
 var storage  = process.env.DATABASE_STORAGE;
 
 // Cargar el modelo ORM
@@ -19,7 +19,7 @@ var sequelize = new Sequelize(DB_name, user, pwd,
     protocol: protocol,
     port:     port,
     host:     host,
-    storage:  storage,  // solo SQLite (.env)
+    //storage:  storage,  // solo SQLite (.env)
     omitNull: true      // solo Postgres
   }
 );
